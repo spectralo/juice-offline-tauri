@@ -1,10 +1,22 @@
 import "./App.css";
+import { ThemeProvider } from "@/components/ThemeProvider";
+import Home from "./Home";
+import WinControls from "./WinControls";
 
 function App() {
   return (
-    <div className="h-screen overflow-auto bg-slate-200 text-black/90 dark:bg-slate-900 dark:text-white">
-      <h1>Hi</h1>
-    </div>
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <div className="h-screen overflow-clip">
+        <WinControls />
+        <div
+          className={
+            "h-screen overflow-auto border-t bg-background pb-8 scrollbar scrollbar-track-transparent scrollbar-thumb-accent scrollbar-thumb-rounded-md"
+          }
+        >
+          <Home />
+        </div>
+      </div>
+    </ThemeProvider>
   );
 }
 

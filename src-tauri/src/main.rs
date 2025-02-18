@@ -3,7 +3,6 @@
 
 fn main() {
     tauri::Builder::default()
-        .plugin(tauri_plugin_os::init())
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
     juice_offline_lib::run()
