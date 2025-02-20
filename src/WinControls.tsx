@@ -1,22 +1,12 @@
 import { useEffect } from "react";
 import { WindowControls } from "tauri-controls";
-import { platform } from "@tauri-apps/plugin-os";
 import { useState } from "react";
 import { CardStackIcon } from "@radix-ui/react-icons";
 import { Button } from "./components/ui/button";
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
+import { ArrowLeftIcon } from "@radix-ui/react-icons";
+import { NavLink } from "react-router";
 
-function WinControls() {
+function WinControls({ doesReturn = true }) {
   const [userPlatform, setUserPlatform] = useState("");
   const [styleAddons, setStyleAddons] = useState("");
 
@@ -51,7 +41,17 @@ function WinControls() {
           {" "}
           {/* Right side */}
           <Button variant="outline" size="sm" style={{ marginRight: 10 }}>
-            <CardStackIcon />
+            {doesReturn ? (
+              <>
+                <NavLink to="/sessions" end>
+                  <CardStackIcon />
+                </NavLink>
+              </>
+            ) : (
+              <NavLink to="/" end>
+                <ArrowLeftIcon />
+              </NavLink>
+            )}
           </Button>
         </div>
       </div>
