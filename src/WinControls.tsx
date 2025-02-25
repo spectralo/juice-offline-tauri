@@ -31,6 +31,7 @@ function WinControls({ doesReturn = true }) {
     <>
       <div
         className={`flex justify-between items-center w-full ${styleAddons}`}
+        data-tauri-drag-region
       >
         <div>
           {" "}

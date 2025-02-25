@@ -82,3 +82,8 @@
         @apply bg-background text-foreground;
     }
 }
+
+html,
+body {
+    background: var(--color-background);
+}

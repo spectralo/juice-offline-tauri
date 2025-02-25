@@ -13,12 +13,14 @@
     "windows": [
       {
         "title": "juice-offline",
-        "width": 300,
-        "height": 800,
+        "width": 400,
+        "height": 600,
         "decorations": false,
-        "backgroundColor": "#ffffff"
+        "transparent": true,
+        "resizable": false
       }
     ],
+    "macOSPrivateApi": true,
     "security": {
       "csp": null
     }
